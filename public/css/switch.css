@@ -34,7 +34,7 @@
 /* DEMO 3 */
 
 .switch.demo3 {
-   width: 95px;
+   width: 46px;
    height: 24px;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .switch.demo3 label i:before {
-  content: "All";
+  content: "Si";
   /* text-transform: uppercase; */
   font-style: normal;
   font-weight: bold;
@@ -97,7 +97,7 @@
 }
 
 .switch.demo3 input:checked ~ label i:before {
-  content: "None";
+  content: "No";
   right: 115%;
   color: black;
   /* color: #82a06a; */

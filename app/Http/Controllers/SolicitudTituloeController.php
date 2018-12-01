@@ -150,7 +150,10 @@ class SolicitudTituloeController extends Controller
       $listaErrores =  $this->listaErr($queryFecha);
 
       $query = ''; // query de condiciones multiples de errores en cédulas
-      $queryBase = "SELECT * FROM solicitudes_sep WHERE (status = 1) ";
+      $queryBase  = "SELECT * FROM solicitudes_sep ";
+      $queryBase .= "JOIN _estudios ";
+      $queryBase .= "ON (nivel COLLATE utf8_unicode_ci)=(cat_subcve COLLATE utf8_unicode_ci) ";
+      $queryBase .= "WHERE (status = 1) ";
       // Preguntamos si se la elegido una opcion en el menu de inconsistencias
       if (isset(request()->eSelect)) {
          // Se encuentran elecciones en el arreglo
@@ -267,7 +270,8 @@ class SolicitudTituloeController extends Controller
          $composite .=           "<p>".$data[$i]->libro."-".$data[$i]->foja."-".$data[$i]->folio."</p>";
          $composite .=        "</div>";
          $composite .=        "<div class='Cell level'>";
-         $composite .=           "<p>".$data[$i]->nivel."</p>";
+         $nivelNombre =
+         $composite .=           "<p>".$data[$i]->nivel.". ".$data[$i]->cat_nombre."</p>";
          $composite .=        "</div>";
          $composite .=        "<div class='Cell cve'>";
          $composite .=           "<p>".$data[$i]->cve_carrera."</p>";

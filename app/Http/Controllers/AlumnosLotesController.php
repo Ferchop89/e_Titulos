@@ -362,6 +362,13 @@ class AlumnosLotesController extends Controller
      $verif = substr($num_cta, 8, 1);
      $foto = $this->consultaFotos($cuenta);
      $info = $this->solicitud($num_cta);
+     if($info == null){
+       $msj = "No se encuentran registros con el número de cuenta ".$num_cta;
+       Session::flash('error', $msj);
+     }elseif($info[0]->status != '7' || $info[0]->status != '8'){
+       $msj = "El alumno no cuenta con el proceso requerido para esta cancelación.";
+       Session::flash('info', $msj);
+     }
      $motivos = $this->motivosCancelacion();
      return view('/menus/cedulas_canceladas', ['foto' => $foto, 'info' => $info, 'motivos' => $motivos]);
    }

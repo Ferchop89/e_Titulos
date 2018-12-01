@@ -306,7 +306,8 @@ $carreras = [
       // $composite .=  "<form action='https://enigma.unam.mx/componentefirma/initSigningProcess' method = 'POST'>";
       $composite .=  "<form action='https://kryptos.unam.mx/componentefirma/initSigningProcess' method = 'POST'>";
       $composite .=     "<input type='hidden' name='_token' value='".csrf_token()."'>";
-      $composite .=     "<input type='hidden' name='datos' value='".$this->loteCadena($data[$i]->fecha_lote, Auth::user()->roles()->first()->nombre)."'>";
+      $manejoTilde = $this->loteCadena($data[$i]->fecha_lote, Auth::user()->roles()->first()->nombre);
+      $composite .=     "<input type='hidden' name='datos' value=\"".htmlspecialchars($manejoTilde)."\">";
       $composite .=     "<input type='hidden' name='URL' value='".$url."'>";
       $composite .=     "<input type='hidden' name='curp' value='".$curp."'>";
       $composite .=     "<input type='submit' value='Firmar' id='btnFirma' class='btn'/>";

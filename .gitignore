@@ -12,3 +12,4 @@ yarn-error.log
 /vendor
 .env
 /config/database.php
+/database/seeds/UserSeeder.php

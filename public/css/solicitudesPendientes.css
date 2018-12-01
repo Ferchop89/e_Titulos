@@ -50,7 +50,7 @@ select[multiple], select[size] {
    font-weight: bold;
    text-align: center;
    /* width: 1262px; */
-   width: 92%;
+   width: 96%;
    display: inline-block;
    color: black;
    background-color: navajowhite
@@ -136,11 +136,11 @@ select[multiple], select[size] {
 }
 .Cell.level {
    width: 10%;
-   min-width: 58px;
+   min-width: 158px;
 }
 .Cell.cve {
    width: 10%;
-   min-width: 130px;
+   min-width: 120px;
 }
 .Cell.sistema {
    width: 8%;
@@ -151,7 +151,7 @@ select[multiple], select[size] {
    min-width: 88px;
 }
 .accordion-a {
-    width: 92%;
+    width: 96%;
     display: inline-flex;
 }
 .solicitudes.aFirma .accordion-a{
@@ -167,7 +167,7 @@ select[multiple], select[size] {
 }
 .Cell.btns, .Cell.actions {
    /* width: 109px; */
-   width: 8%;
+   width: 4%;
    display: inline-block;
    vertical-align: top;
    font-weight: bold;
